@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 
             if (guessText.isEmpty()) {
                 guessInput.error = "Enter a Number"
-                return@setOnClickListener
+                return@setOnClickListener /* Prevents empty string turning to number */
             }
 
             val guess = guessText.toInt()
