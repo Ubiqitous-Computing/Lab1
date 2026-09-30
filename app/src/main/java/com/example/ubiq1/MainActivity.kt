@@ -16,6 +16,7 @@ import com.example.ubiq1.ui.theme.Ubiq1Theme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        println("onCreate()")
         enableEdgeToEdge()
         setContent {
             Ubiq1Theme {
@@ -28,8 +29,33 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-}
 
+    /* Displaying Application Life Cycle on LogCat */
+    override fun onPause() {
+        super.onPause()
+        println("onPause()")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        println("onResume()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("onStop()")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        println("onRestart()")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("onDestroy()")
+    }
+}
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
